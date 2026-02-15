@@ -1,7 +1,7 @@
 baseURL = 'https://jackcl.github.io/jackladbrook.com/'
 languageCode = 'en-gb'
-title = 'Jack C Ladbrook — Cyber Security Architect'
+title = 'Jack C-Ladbrook — Cyber Security Architect'
 theme = 'jcl'
 
 [params]
-  description = "Cyber Security Architect | CISSP | Freelance Development & AI Services"
+  description = "Cyber Security Architect | CISSP | Security, Freelance Development & AI Services"
