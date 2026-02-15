@@ -1,0 +1,74 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0f1117;
+  --bg-alt: #161922;
+  --surface: #1c1f2b;
+  --text: #c9cdd6;
+  --text-bright: #e8ebf0;
+  --accent: #2dd4a8;
+  --accent-dim: #1a8a6e;
+  --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.7; font-size: 1.05rem; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== Nav ===== */
+.nav { position: fixed; top: 0; width: 100%; background: rgba(15,17,23,.92); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid rgba(45,212,168,.1); }
+.nav-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: .9rem 1.5rem; }
+.nav-logo { font-weight: 700; font-size: 1.3rem; color: var(--accent); letter-spacing: 2px; }
+.nav-logo:hover { text-decoration: none; }
+.nav-links a { color: var(--text); margin-left: 1.8rem; font-size: .95rem; transition: color .2s; }
+.nav-links a:hover { color: var(--accent); text-decoration: none; }
+
+/* ===== Sections ===== */
+.section { padding: 5rem 1.5rem; }
+.section-alt { background: var(--bg-alt); }
+.container { max-width: 900px; margin: 0 auto; }
+h2 { font-size: 2rem; color: var(--text-bright); margin-bottom: 1.5rem; position: relative; display: inline-block; }
+h2::after { content: ''; display: block; width: 50px; height: 3px; background: var(--accent); margin-top: .4rem; border-radius: 2px; }
+
+/* ===== Hero ===== */
+.hero { padding-top: 8rem; min-height: 100vh; display: flex; align-items: center; }
+.hero-content { display: flex; align-items: center; gap: 3rem; }
+.hero-text { flex: 1; }
+.hero h1 { font-size: 3rem; color: var(--text-bright); line-height: 1.15; }
+.subtitle { font-size: 1.4rem; color: var(--accent); margin: .6rem 0; font-weight: 500; }
+.tagline { color: var(--text); margin-bottom: 2rem; font-size: 1.1rem; }
+.hero-photo { flex-shrink: 0; }
+.photo-placeholder { width: 180px; height: 180px; border-radius: 50%; background: var(--surface); border: 3px solid var(--accent-dim); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 700; color: var(--accent); letter-spacing: 3px; }
+
+/* ===== Button ===== */
+.btn { display: inline-block; padding: .8rem 2rem; background: var(--accent); color: var(--bg); font-weight: 600; border-radius: 6px; transition: background .2s, transform .2s; }
+.btn:hover { background: var(--accent-dim); color: var(--text-bright); text-decoration: none; transform: translateY(-1px); }
+
+/* ===== Grid / Cards ===== */
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1rem; }
+.card { background: var(--surface); padding: 1.8rem; border-radius: 10px; border: 1px solid rgba(45,212,168,.08); transition: border-color .2s; }
+.card:hover { border-color: var(--accent-dim); }
+.card h3 { color: var(--text-bright); margin-bottom: .6rem; font-size: 1.15rem; }
+
+/* ===== Credentials ===== */
+.credentials-list { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem; }
+.credential { display: flex; align-items: flex-start; gap: 1.5rem; background: var(--surface); padding: 1.5rem; border-radius: 10px; border: 1px solid rgba(45,212,168,.08); }
+.credential-badge { background: var(--accent-dim); color: var(--text-bright); padding: .5rem 1rem; border-radius: 6px; font-weight: 700; font-size: .95rem; letter-spacing: 1px; white-space: nowrap; }
+.credential p { margin-top: .3rem; font-size: .95rem; }
+
+/* ===== Contact ===== */
+.contact-links { margin-top: 1.5rem; }
+
+/* ===== Footer ===== */
+.footer { text-align: center; padding: 2rem 1.5rem; color: #555; font-size: .85rem; border-top: 1px solid rgba(45,212,168,.08); }
+
+/* ===== Mobile ===== */
+@media (max-width: 700px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero-content { flex-direction: column-reverse; text-align: center; }
+  .grid { grid-template-columns: 1fr; }
+  .nav-links a { margin-left: 1rem; font-size: .85rem; }
+  .credential { flex-direction: column; align-items: flex-start; }
+}

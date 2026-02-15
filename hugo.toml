@@ -1,0 +1,7 @@
+baseURL = 'https://jackladbrook.com/'
+languageCode = 'en-gb'
+title = 'Jack C Ladbrook — Cyber Security Architect'
+theme = 'jcl'
+
+[params]
+  description = "Cyber Security Architect | CISSP | Freelance Development & AI Services"
