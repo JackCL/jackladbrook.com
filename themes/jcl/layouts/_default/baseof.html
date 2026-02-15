@@ -5,12 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ .Title }}</title>
   <meta name="description" content="{{ .Site.Params.description }}">
+  <meta name="author" content="Jack C Ladbrook">
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:description" content="{{ .Site.Params.description }}">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <nav class="nav">
+  <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo">JCL</a>
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">&#9711;</span> JCL
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -19,9 +31,37 @@
       </div>
     </div>
   </nav>
+
   {{ block "main" . }}{{ end }}
+
   <footer class="footer">
-    <p>&copy; {{ now.Year }} Jack C Ladbrook. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">JCL</span>
+        <p>Cyber Security Architect</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; {{ now.Year }} Jack C Ladbrook. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
