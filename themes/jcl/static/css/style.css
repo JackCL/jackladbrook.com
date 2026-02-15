@@ -196,7 +196,7 @@ h2 {
 
 /* ===== Services ===== */
 .services-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
 }
 .service-card {
   background: var(--surface); padding: 2rem;
@@ -316,6 +316,9 @@ h2 {
 
   .services-grid { grid-template-columns: 1fr; }
   .credentials-grid { grid-template-columns: 1fr; }
+}
+@media (min-width: 701px) and (max-width: 960px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
 
   .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
 }
