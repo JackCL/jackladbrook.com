@@ -226,6 +226,7 @@ h2 {
 /* ===== Credentials ===== */
 .credentials-grid {
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+  max-width: 960px;
 }
 .credential-card {
   background: var(--surface); padding: 2rem;
@@ -244,6 +245,14 @@ h2 {
 .credential-badge.cissp {
   background: linear-gradient(135deg, rgba(45, 212, 168, 0.2), rgba(45, 212, 168, 0.05));
   color: var(--accent); border: 1px solid rgba(45, 212, 168, 0.25);
+}
+.credential-badge.cism {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(251, 191, 36, 0.05));
+  color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.25);
+}
+.credential-badge.aws {
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.2), rgba(251, 146, 60, 0.05));
+  color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.25);
 }
 .credential-badge.bsc {
   background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(96, 165, 250, 0.05));
